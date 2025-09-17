@@ -1,0 +1,26 @@
+class Weapon {
+  void action() {
+    print("some action");
+  }
+}
+
+class Sword extends Weapon {
+  @override
+  void action() {
+    print("Swinging!");
+  }
+}
+
+class Bow extends Weapon {
+  @override
+  void action() {
+    print("Firing");
+  }
+}
+
+void main() {
+  List<Weapon> weapons = [Sword(), Bow()];
+  for (var weapon in weapons) {
+    weapon.action();
+  }
+}
