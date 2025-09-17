@@ -1,0 +1,21 @@
+class Shape {
+  String color;
+  Shape(this.color);
+}
+
+class Circle extends Shape {
+  double radius;
+  Circle(String color, this.radius) : super(color);
+}
+
+class Square extends Shape {
+  double sideLength;
+  Square(String color, this.sideLength) : super(color);
+}
+
+void main() {
+  Circle circle1 = Circle("blue", 10);
+  Square square1 = Square("red", 5);
+  print("${circle1.color} circle with radius=${circle1.radius}");
+  print("${square1.color} square with side length=${square1.sideLength}");
+}
