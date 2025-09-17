@@ -1,0 +1,7 @@
+enum OrderStatus { pending, processing, shipped, delivered, cancelled }
+
+void main() {
+  OrderStatus myStatus = OrderStatus.processing;
+  //print(myStatus); prints OrderStatus.processing, which might be useless
+  print(myStatus.name);
+}
