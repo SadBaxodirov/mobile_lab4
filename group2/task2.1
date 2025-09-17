@@ -1,4 +1,4 @@
-enum DaysOfWeek{
+enum DaysOfWeek {
   monday,
   tuesday,
   wednesday,
@@ -7,19 +7,19 @@ enum DaysOfWeek{
   saturday,
   sunday
 }
-void checkDay(DaysOfWeek day){
-  swith(day){
+
+void checkDay(DaysOfWeek day) {
+  switch (day) {
     case DaysOfWeek.saturday:
     case DaysOfWeek.sunday:
       print("${day} is on the weekend!");
       break;
     default:
       print("${day} is a weekday");
-
-
   }
 }
-void main(){
+
+void main() {
   checkDay(DaysOfWeek.monday);
   checkDay(DaysOfWeek.saturday);
 }
