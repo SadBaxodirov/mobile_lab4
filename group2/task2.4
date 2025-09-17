@@ -1,0 +1,23 @@
+enum UserRole { admin, editor, guest }
+
+class User {
+  String name;
+  UserRole role;
+  User(this.name, this.role);
+  bool hasEditPermission() {
+    if (role == UserRole.admin || role == UserRole.editor) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+void main() {
+  User user1 = User("Anvar", UserRole.admin);
+  User user2 = User("Ra'no", UserRole.editor);
+  User user3 = User("Said", UserRole.guest);
+  print("${user1.name} has edit permission: ${user1.hasEditPermission()}");
+  print("${user2.name} has edit permission: ${user2.hasEditPermission()}");
+  print("${user3.name} has edit permission: ${user3.hasEditPermission()}");
+}
