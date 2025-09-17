@@ -1,0 +1,26 @@
+class Employee {
+  String name;
+  int baseSalary;
+  Employee(this.name, this.baseSalary);
+  int calculateSalary() {
+    return baseSalary;
+  }
+}
+
+class Manager extends Employee {
+  int bonus;
+  Manager(String name, int baseSalary, this.bonus) : super(name, baseSalary);
+  @override
+  int calculateSalary() {
+    return baseSalary + bonus;
+  }
+}
+
+void main() {
+  Employee employee1 = Employee("Anvar", 100);
+  Manager manager1 = Manager("Ra'no", 120, 50);
+  print("${employee1.name} employee salary: ${employee1.calculateSalary()}");
+  print(
+      "${manager1.name} manager salary with bonus: ${manager1.calculateSalary()}");
+}
+
