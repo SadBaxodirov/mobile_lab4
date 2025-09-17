@@ -1,0 +1,35 @@
+class BankAccount {
+  int accountNumber;
+  String accountHolderName;
+  double balance;
+  BankAccount(this.accountNumber, this.accountHolderName, this.balance);
+  void deposit(double amount) {
+    if (amount > 0) {
+      balance += amount;
+      print(
+          "${accountHolderName}'s account was increased by ${amount}\nCurrent balance: ${balance}");
+    } else {
+      print("Error, amount should be more than 0");
+    }
+  }
+
+  void withdraw(double amount) {
+    if (amount < balance) {
+      balance -= amount;
+      print(
+          "${accountHolderName}'s account was decreased by ${amount}\nCurrent balance: ${balance}");
+    } else {
+      print("not enough balance!");
+    }
+  }
+}
+
+void main() {
+  BankAccount myAccount = BankAccount(1234, "Sayid", 100);
+  myAccount.deposit(10);
+  print("Deposit 0\$");
+  myAccount.deposit(0);
+  myAccount.withdraw(60);
+  print("withdraw 100\$, not enough balance");
+  myAccount.withdraw(100);
+}
