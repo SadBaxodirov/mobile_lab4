@@ -1,0 +1,31 @@
+mixin Performer {
+  void perform() {
+    print("performing...");
+  }
+}
+mixin Musician {
+  void playInstrument() {
+    print("playing some instrument...");
+  }
+}
+
+class Artist {
+  String name;
+  Artist(this.name);
+}
+
+class Dancer extends Artist with Performer {
+  Dancer(String name) : super(name);
+}
+
+class Guitarist extends Artist with Performer, Musician {
+  Guitarist(String name) : super(name);
+}
+
+void main() {
+  Dancer dancer = Dancer("Anvar");
+  dancer.perform();
+  Guitarist guitarist = Guitarist("Dilshod");
+  guitarist.perform();
+  guitarist.playInstrument();
+}
