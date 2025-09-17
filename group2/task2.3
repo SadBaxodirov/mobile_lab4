@@ -1,0 +1,23 @@
+enum TrafficLight { red, yellow, green }
+
+String action(TrafficLight myLight) {
+  switch (myLight) {
+    case TrafficLight.red:
+      return "Stop, wait for a little";
+      break;
+    case TrafficLight.yellow:
+      return "caution, prepare";
+      break;
+    default:
+      return "Go!!!";
+  }
+}
+
+void main() {
+  TrafficLight myLight = TrafficLight.red;
+  print(action(myLight));
+  myLight = TrafficLight.yellow;
+  print(action(myLight));
+  myLight = TrafficLight.green;
+  print(action(myLight));
+}
