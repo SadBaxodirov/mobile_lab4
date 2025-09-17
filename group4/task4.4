@@ -1,0 +1,40 @@
+mixin Validator {
+  bool IsEmailValid(String email) {
+    if (email.contains("@gmail.com")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  bool IsPasswordStrong(String password) {
+    if (password.length > 8) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+class UserSignup with Validator {
+  void validate(String email, String password) {
+    if (IsEmailValid(email)) {
+      print("Email is valid.");
+    } else {
+      print("Email is invalid.");
+    }
+
+    if (IsPasswordStrong(password)) {
+      print("Password is strong.");
+    } else {
+      print("Password is too weak.");
+    }
+  }
+}
+
+void main() {
+  UserSignup signup = UserSignup();
+  signup.validate("user1@gmail.com", "mypassword123");
+  print('\n');
+  signup.validate("invalid-email", "short");
+}
