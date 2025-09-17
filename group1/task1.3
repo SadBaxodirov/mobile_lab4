@@ -1,0 +1,20 @@
+
+class Student {
+  String name;
+  int age;
+  List<double> grades;
+  Student(this.name, this.age, this.grades);
+  double calculateAverageGrade() {
+    double sum = 0;
+    for (int i = 0; i < grades.length; i++) {
+      sum += grades[i];
+    }
+    return sum / grades.length;
+  }
+}
+
+void main() {
+  Student myStudent = Student("Anvar", 20, [2.3, 4.5, 5, 2, 6, 1, 0]);
+  print(
+      "Student ${myStudent.name} has average grade: ${myStudent.calculateAverageGrade()}");
+}
