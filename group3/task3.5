@@ -1,0 +1,33 @@
+class LibraryItem {
+  String title;
+  int id;
+  LibraryItem(this.title, this.id);
+  String getDetails() {
+    return "Library item with name ${title} and id ${id}";
+  }
+}
+
+class Book extends LibraryItem {
+  String author;
+  Book(String title, int id, this.author) : super(title, id);
+  @override
+  String getDetails() {
+    return "Book name: ${title}, written by ${author}, id: ${id}";
+  }
+}
+
+class DVD extends LibraryItem {
+  String director;
+  DVD(String title, int id, this.director) : super(title, id);
+  @override
+  String getDetails() {
+    return "DVD name: ${title}, directed by ${director}, id: ${id}";
+  }
+}
+
+void main() {
+  Book book1 = Book("first book", 123, "Anvar");
+  DVD dvd1 = DVD("first dvd", 1234, "Ra'no");
+  print(book1.getDetails());
+  print(dvd1.getDetails());
+}
