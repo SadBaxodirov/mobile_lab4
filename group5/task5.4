@@ -1,0 +1,28 @@
+abstract class PaymentMethod {
+  void pay(double amount);
+}
+
+class CreditCard extends PaymentMethod {
+  @override
+  void pay(double amount) {
+    print("paying $amount using credit card");
+  }
+}
+
+class PayPal extends PaymentMethod {
+  @override
+  void pay(double amount) {
+    print("paying $amount using PayPal");
+  }
+}
+
+void ProcessPayment(PaymentMethod payment, double amount) {
+  payment.pay(amount);
+}
+
+void main() {
+  CreditCard credit = CreditCard();
+  ProcessPayment(credit, 100);
+  PayPal pal = PayPal();
+  ProcessPayment(pal, 200);
+}
